@@ -19,6 +19,10 @@
 		779A698718914C78003BB32D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779A696F18914C78003BB32D /* UIKit.framework */; };
 		779A698F18914C78003BB32D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 779A698D18914C78003BB32D /* InfoPlist.strings */; };
 		779A699118914C78003BB32D /* DataSuckerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 779A699018914C78003BB32D /* DataSuckerTests.m */; };
+		779A699D18914D81003BB32D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 779A699C18914D81003BB32D /* MainViewController.m */; };
+		779A69A0189150C1003BB32D /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 779A699F189150C1003BB32D /* TableViewController.m */; };
+		77C838BD189283B10051A3A6 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C838BC189283B10051A3A6 /* PickerViewController.m */; };
+		77C838C1189288BF0051A3A6 /* DataSourceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C838C0189288BF0051A3A6 /* DataSourceModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,14 @@
 		779A698C18914C78003BB32D /* DataSuckerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DataSuckerTests-Info.plist"; sourceTree = "<group>"; };
 		779A698E18914C78003BB32D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		779A699018914C78003BB32D /* DataSuckerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataSuckerTests.m; sourceTree = "<group>"; };
+		779A699B18914D81003BB32D /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ViewController/MainViewController.h; sourceTree = "<group>"; };
+		779A699C18914D81003BB32D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ViewController/MainViewController.m; sourceTree = "<group>"; };
+		779A699E189150C1003BB32D /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewController.h; path = ViewController/TableViewController.h; sourceTree = "<group>"; };
+		779A699F189150C1003BB32D /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewController.m; path = ViewController/TableViewController.m; sourceTree = "<group>"; };
+		77C838BB189283B10051A3A6 /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PickerViewController.h; path = ViewController/PickerViewController.h; sourceTree = "<group>"; };
+		77C838BC189283B10051A3A6 /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PickerViewController.m; path = ViewController/PickerViewController.m; sourceTree = "<group>"; };
+		77C838BF189288BF0051A3A6 /* DataSourceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataSourceModel.h; path = Model/DataSourceModel.h; sourceTree = "<group>"; };
+		77C838C0189288BF0051A3A6 /* DataSourceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataSourceModel.m; path = Model/DataSourceModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +119,8 @@
 		779A697118914C78003BB32D /* DataSucker */ = {
 			isa = PBXGroup;
 			children = (
+				77C838BE189287FE0051A3A6 /* Model */,
+				779A699A18914D04003BB32D /* ViewController */,
 				779A697A18914C78003BB32D /* AppDelegate.h */,
 				779A697B18914C78003BB32D /* AppDelegate.m */,
 				779A697D18914C78003BB32D /* Images.xcassets */,
@@ -142,6 +156,28 @@
 				779A698D18914C78003BB32D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		779A699A18914D04003BB32D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				779A699B18914D81003BB32D /* MainViewController.h */,
+				779A699C18914D81003BB32D /* MainViewController.m */,
+				779A699E189150C1003BB32D /* TableViewController.h */,
+				779A699F189150C1003BB32D /* TableViewController.m */,
+				77C838BB189283B10051A3A6 /* PickerViewController.h */,
+				77C838BC189283B10051A3A6 /* PickerViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		77C838BE189287FE0051A3A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				77C838BF189288BF0051A3A6 /* DataSourceModel.h */,
+				77C838C0189288BF0051A3A6 /* DataSourceModel.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +276,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				779A697C18914C78003BB32D /* AppDelegate.m in Sources */,
+				779A699D18914D81003BB32D /* MainViewController.m in Sources */,
+				77C838C1189288BF0051A3A6 /* DataSourceModel.m in Sources */,
+				77C838BD189283B10051A3A6 /* PickerViewController.m in Sources */,
 				779A697818914C78003BB32D /* main.m in Sources */,
+				779A69A0189150C1003BB32D /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +402,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DataSucker/DataSucker-Prefix.pch";
 				INFOPLIST_FILE = "DataSucker/DataSucker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -375,6 +416,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DataSucker/DataSucker-Prefix.pch";
 				INFOPLIST_FILE = "DataSucker/DataSucker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -441,6 +483,7 @@
 				779A699618914C78003BB32D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		779A699718914C78003BB32D /* Build configuration list for PBXNativeTarget "DataSuckerTests" */ = {
 			isa = XCConfigurationList;
@@ -449,6 +492,7 @@
 				779A699918914C78003BB32D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
