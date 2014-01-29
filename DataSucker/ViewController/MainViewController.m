@@ -28,8 +28,8 @@
         
         [self createStartButtonWithXPosition:20 andyPosition:300];
         [self createPIckerButtonWithXPosition:240 andyPosition:300];
-        _tableViewController = [TableViewController new];
-        _pickerViewController = [PickerViewController new];
+        
+
         // Custom initialization
     }
     return self;
@@ -48,6 +48,7 @@
 
 -(void) startButtonTouched
 {
+    _tableViewController = [TableViewController new];
     [self.view addSubview:_tableViewController.view];
     
     NSLog(@"touched");
@@ -65,7 +66,10 @@
 
 -(void) pickerButtonTouched
 {
+#warning wie bringe ich die mainview aus dem sichtbaren Bereich oder unload?
+    _pickerViewController = [PickerViewController new];
     [self.view addSubview:_pickerViewController.view];
+    
 }
 
 #pragma mark - system

@@ -23,7 +23,6 @@
     self = [super init];
     if (self)
     {
-        self.view.backgroundColor = [UIColor grayColor];
         [self loadPostObjectsFromSource];
         [self loadPicker];
 
@@ -35,7 +34,8 @@
 -(void) loadPicker
 {
     UIPickerView *picker = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 200, 320, 300)];
-    picker.backgroundColor = [UIColor lightGrayColor];
+    picker.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor =[UIColor whiteColor];
     [self.view addSubview:picker];
     [picker setDelegate:self];
 }
@@ -67,7 +67,19 @@
     return rowTitle;
 }
 */
-
+-(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    NSDictionary *alertDict = [_postArray objectAtIndex:row];
+    
+    NSString *touchString = [alertDict objectForKey:@"title"];
+    
+    UIAlertView *touchAlertView = [[UIAlertView alloc] initWithTitle:@"Selection Information"
+                                                             message:touchString
+                                                            delegate:self
+                                                   cancelButtonTitle:@"OK"
+                                                   otherButtonTitles: nil];
+    [touchAlertView show];
+}
 
 
 -(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
@@ -82,7 +94,7 @@
     
     //Image zuweisen
     UIImageView *rowImage = [[UIImageView alloc] initWithImage:tmpImage];
-    rowImage.frame = CGRectMake(0, 0, 60, 60);
+    rowImage.frame = CGRectMake(10, 0, 60, 60);
     //rowImage.backgroundColor = [UIColor clearColor];
     
     //Text ans Label geben
