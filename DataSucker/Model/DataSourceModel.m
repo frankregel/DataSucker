@@ -10,6 +10,7 @@
 
 @interface DataSourceModel()
 @property NSArray *postArray;
+@property NSMutableArray *mutableImageArray;
 
 
 @end
@@ -31,6 +32,22 @@
     
     
         return _postArray;
+}
+
+-(NSMutableArray*) getPicsFromWanWith:(NSString*)stringForKey inPostArray:(NSArray*)thumbNailArray
+{
+    _mutableImageArray = [NSMutableArray new];
+    
+    for (NSDictionary *tmpDict in thumbNailArray)
+    {
+        NSString *thumbnailString =[tmpDict objectForKey:stringForKey];
+        NSURL *thumbnailURL =[NSURL URLWithString:thumbnailString];
+        NSData *tmpImageData = [NSData dataWithContentsOfURL:thumbnailURL];
+        UIImage *tmpImage = [UIImage imageWithData:tmpImageData];
+        [_mutableImageArray addObject:tmpImage];
+        
+    }
+    return _mutableImageArray;
 }
 
 @end

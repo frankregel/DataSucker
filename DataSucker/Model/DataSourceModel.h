@@ -15,6 +15,7 @@
 @property id<DataSourceDelegate> delegate;
 
 -(NSArray*)loadDataFromWanWith:(NSString*)quellURL and:(NSString*)keyForObject;
+-(NSMutableArray*) getPicsFromWanWith:(NSString*)stringForKey inPostArray:(NSArray*)thumbNailArray;
 @end
 
 @protocol DataSourceDelegate <NSObject>

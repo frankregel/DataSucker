@@ -11,6 +11,7 @@
 
 @interface PickerViewController () //<DataSourceDelegate>
 @property NSArray *postArray;
+@property NSMutableArray *mutableImageArray;
 @property DataSourceModel *dataSource;
 @property UIPickerView *picker;
 
@@ -25,6 +26,7 @@
     {
         [self loadPostObjectsFromSource];
         [self loadPicker];
+        [self createBackButton];
 
     }
     return self;
@@ -34,13 +36,28 @@
 -(void) loadPicker
 {
     UIPickerView *picker = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 200, 320, 300)];
-    picker.backgroundColor = [UIColor whiteColor];
+    picker.backgroundColor = [UIColor greenColor];
     self.view.backgroundColor =[UIColor whiteColor];
     [self.view addSubview:picker];
     [picker setDelegate:self];
 }
 
+-(void)createBackButton
+{
+    UIButton *backButton = [[UIButton alloc]initWithFrame:CGRectMake(130, 100, 60, 40)];
+    [backButton setTitle:@"zurück" forState:UIControlStateNormal];
+    backButton.backgroundColor = [UIColor lightGrayColor];
+    [backButton addTarget:self action:@selector(backToMainScreen) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:backButton];
+}
 
+-(void)backToMainScreen
+{
+    if (_graphicsDelegate)
+    {
+        [_graphicsDelegate backButtonTouched:self];
+    }
+}
 #pragma mark - delegates implementieren
 //delegates
 //Anzahl der Rollen
@@ -59,8 +76,8 @@
     //die Höhe der einzelnen Zellen bestimmen.
     return 70;
 }
-
-/*-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+/*
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     NSDictionary *oneResultDict = [_postArray objectAtIndex:row];
     NSString *rowTitle = [oneResultDict objectForKey:@"title"];
@@ -87,16 +104,10 @@
     
     NSDictionary *oneResultDict = [_postArray objectAtIndex:row];
     
-    //aus ner URL die Daten holen, die ich brauche
-    NSData *tmpImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[oneResultDict objectForKey:@"thumbnail"]]];
-    
-    UIImage *tmpImage = [UIImage imageWithData:tmpImageData];
-    
-    //Image zuweisen
-    UIImageView *rowImage = [[UIImageView alloc] initWithImage:tmpImage];
-    rowImage.frame = CGRectMake(10, 0, 60, 60);
-    //rowImage.backgroundColor = [UIColor clearColor];
-    
+    UIImage *tmpImage = [_mutableImageArray objectAtIndex:row];
+    UIImageView *rowImage = [[UIImageView alloc]initWithImage:tmpImage];
+    rowImage.frame = CGRectMake(10, 0, 20, 60);
+    rowImage.contentMode = UIViewContentModeScaleAspectFit;//positionieren, anpassen etc.
     //Text ans Label geben
     UILabel *rowLabel = [[UILabel alloc]initWithFrame:CGRectMake(120, 0, 200, 60)];
     rowLabel.text = [oneResultDict objectForKey:@"title"];
@@ -118,6 +129,7 @@
 {
     _dataSource = [DataSourceModel new];
     _postArray = [_dataSource loadDataFromWanWith:@"http://www.dealdoktor.de/api/get_top_deals/" and:@"posts"];
+    _mutableImageArray = [_dataSource getPicsFromWanWith:@"thumbnail" inPostArray:_postArray];
 }
 
 #pragma mark - System
