@@ -174,7 +174,11 @@
 				77C838BB189283B10051A3A6 /* PickerViewController.h */,
 				77C838BC189283B10051A3A6 /* PickerViewController.m */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				773492AD189A475800A44AD2 /* jaegerWW2_2.png */,
+=======
+				847B805E1899164A0024F65B /* test.png */,
+>>>>>>> f519a36ece9b9b13be6d6480206fad97b3cc7a3e
 =======
 				847B805E1899164A0024F65B /* test.png */,
 >>>>>>> f519a36ece9b9b13be6d6480206fad97b3cc7a3e
