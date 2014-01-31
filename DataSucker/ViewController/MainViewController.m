@@ -9,8 +9,9 @@
 #import "MainViewController.h"
 #import "TableViewController.h"
 #import "PickerViewController.h"
+#import "GraphicsProtocol.h"
 
-@interface MainViewController ()
+@interface MainViewController ()<GraphicsProtocol>
 @property TableViewController *tableViewController;
 @property PickerViewController *pickerViewController;
 @property UIButton *startButton;
@@ -19,12 +20,22 @@
 
 @implementation MainViewController
 
+//delegate Methode
+-(void)backButtonTouched:(UIViewController *)viewController
+{
+    NSLog(@"back button touched");
+    [viewController.view removeFromSuperview];
+    
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
         self.view.backgroundColor = [UIColor yellowColor];
+        
+        _tableViewController = [TableViewController new];
         
         [self createStartButtonWithXPosition:20 andyPosition:300];
         [self createPIckerButtonWithXPosition:240 andyPosition:300];
@@ -48,7 +59,7 @@
 
 -(void) startButtonTouched
 {
-    _tableViewController = [TableViewController new];
+    
     [self.view addSubview:_tableViewController.view];
     
     NSLog(@"touched");
@@ -68,6 +79,7 @@
 {
 #warning wie bringe ich die mainview aus dem sichtbaren Bereich oder unload?
     _pickerViewController = [PickerViewController new];
+    _pickerViewController.graphicsDelegate = self;
     [self.view addSubview:_pickerViewController.view];
     
 }

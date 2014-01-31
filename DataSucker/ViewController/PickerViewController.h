@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GraphicsProtocol.h"
 
 @interface PickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
-
+@property id <GraphicsProtocol> graphicsDelegate;
 
 @end

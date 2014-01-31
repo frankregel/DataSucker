@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		773492AE189A475800A44AD2 /* jaegerWW2_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 773492AD189A475800A44AD2 /* jaegerWW2_2.png */; };
 		779A696C18914C78003BB32D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779A696B18914C78003BB32D /* Foundation.framework */; };
 		779A696E18914C78003BB32D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779A696D18914C78003BB32D /* CoreGraphics.framework */; };
 		779A697018914C78003BB32D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779A696F18914C78003BB32D /* UIKit.framework */; };
@@ -23,6 +24,7 @@
 		779A69A0189150C1003BB32D /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 779A699F189150C1003BB32D /* TableViewController.m */; };
 		77C838BD189283B10051A3A6 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C838BC189283B10051A3A6 /* PickerViewController.m */; };
 		77C838C1189288BF0051A3A6 /* DataSourceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C838C0189288BF0051A3A6 /* DataSourceModel.m */; };
+		847B805F1899164A0024F65B /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 847B805E1899164A0024F65B /* test.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		773492AD189A475800A44AD2 /* jaegerWW2_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jaegerWW2_2.png; sourceTree = "<group>"; };
+		773492AF189A747C00A44AD2 /* GraphicsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsProtocol.h; sourceTree = "<group>"; };
 		779A696818914C78003BB32D /* DataSucker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataSucker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		779A696B18914C78003BB32D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		779A696D18914C78003BB32D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,6 +64,7 @@
 		77C838BC189283B10051A3A6 /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PickerViewController.m; path = ViewController/PickerViewController.m; sourceTree = "<group>"; };
 		77C838BF189288BF0051A3A6 /* DataSourceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataSourceModel.h; path = Model/DataSourceModel.h; sourceTree = "<group>"; };
 		77C838C0189288BF0051A3A6 /* DataSourceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataSourceModel.m; path = Model/DataSourceModel.m; sourceTree = "<group>"; };
+		847B805E1899164A0024F65B /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,10 +168,16 @@
 			children = (
 				779A699B18914D81003BB32D /* MainViewController.h */,
 				779A699C18914D81003BB32D /* MainViewController.m */,
+				773492AF189A747C00A44AD2 /* GraphicsProtocol.h */,
 				779A699E189150C1003BB32D /* TableViewController.h */,
 				779A699F189150C1003BB32D /* TableViewController.m */,
 				77C838BB189283B10051A3A6 /* PickerViewController.h */,
 				77C838BC189283B10051A3A6 /* PickerViewController.m */,
+<<<<<<< HEAD
+				773492AD189A475800A44AD2 /* jaegerWW2_2.png */,
+=======
+				847B805E1899164A0024F65B /* test.png */,
+>>>>>>> f519a36ece9b9b13be6d6480206fad97b3cc7a3e
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -255,8 +266,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				773492AE189A475800A44AD2 /* jaegerWW2_2.png in Resources */,
 				779A697618914C78003BB32D /* InfoPlist.strings in Resources */,
 				779A697E18914C78003BB32D /* Images.xcassets in Resources */,
+				847B805F1899164A0024F65B /* test.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
