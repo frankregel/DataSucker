@@ -57,7 +57,7 @@
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
 {
     //die Höhe der einzelnen Zellen bestimmen.
-    return 70;
+    return 62;
 }
 
 /*-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
@@ -67,6 +67,7 @@
     return rowTitle;
 }
 */
+//prüfen was auf dem Picker ausgewählt wurde
 -(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     NSDictionary *alertDict = [_postArray objectAtIndex:row];
@@ -81,14 +82,17 @@
     [touchAlertView show];
 }
 
-
+//pickerview eine UIView hinzufügen.
+#warning das scheint nicht performant zu sein und schön ist das alles auch nicht
 -(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
 {
     
     NSDictionary *oneResultDict = [_postArray objectAtIndex:row];
     
     //aus ner URL die Daten holen, die ich brauche
-    NSData *tmpImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[oneResultDict objectForKey:@"thumbnail"]]];
+    NSURL *sourceURL = [NSURL URLWithString:[oneResultDict objectForKey:@"thumbnail"]];
+                       
+    NSData *tmpImageData = [NSData dataWithContentsOfURL:sourceURL];
     
     UIImage *tmpImage = [UIImage imageWithData:tmpImageData];
     
@@ -96,17 +100,22 @@
     UIImageView *rowImage = [[UIImageView alloc] initWithImage:tmpImage];
     rowImage.frame = CGRectMake(10, 0, 60, 60);
     //rowImage.backgroundColor = [UIColor clearColor];
+    UIImage *backImage =[UIImage imageNamed:@"test.png"];
+    UIImageView *backgroundImage =[[UIImageView alloc]initWithImage:backImage];
     
     //Text ans Label geben
     UILabel *rowLabel = [[UILabel alloc]initWithFrame:CGRectMake(120, 0, 200, 60)];
     rowLabel.text = [oneResultDict objectForKey:@"title"];
+    
     //rowLabel.backgroundColor = [UIColor clearColor];
     
     //UIView erstellen und image und Label hinzufügen !!!!UIVIEW Y- Height DARF NICHT ZU HOCH SEIN!!!!
     UIView *rowView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+    
     //Inhalte adden
-    [rowView insertSubview:rowImage atIndex:0];
-    [rowView insertSubview:rowLabel atIndex:1];
+    [rowView insertSubview:backgroundImage atIndex:0];
+    [rowView insertSubview:rowImage atIndex:1];
+    [rowView insertSubview:rowLabel atIndex:2];
 
     
     

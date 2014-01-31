@@ -23,6 +23,7 @@
 		779A69A0189150C1003BB32D /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 779A699F189150C1003BB32D /* TableViewController.m */; };
 		77C838BD189283B10051A3A6 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C838BC189283B10051A3A6 /* PickerViewController.m */; };
 		77C838C1189288BF0051A3A6 /* DataSourceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C838C0189288BF0051A3A6 /* DataSourceModel.m */; };
+		847B805F1899164A0024F65B /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 847B805E1899164A0024F65B /* test.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		77C838BC189283B10051A3A6 /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PickerViewController.m; path = ViewController/PickerViewController.m; sourceTree = "<group>"; };
 		77C838BF189288BF0051A3A6 /* DataSourceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataSourceModel.h; path = Model/DataSourceModel.h; sourceTree = "<group>"; };
 		77C838C0189288BF0051A3A6 /* DataSourceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataSourceModel.m; path = Model/DataSourceModel.m; sourceTree = "<group>"; };
+		847B805E1899164A0024F65B /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				779A699F189150C1003BB32D /* TableViewController.m */,
 				77C838BB189283B10051A3A6 /* PickerViewController.h */,
 				77C838BC189283B10051A3A6 /* PickerViewController.m */,
+				847B805E1899164A0024F65B /* test.png */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			files = (
 				779A697618914C78003BB32D /* InfoPlist.strings in Resources */,
 				779A697E18914C78003BB32D /* Images.xcassets in Resources */,
+				847B805F1899164A0024F65B /* test.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
